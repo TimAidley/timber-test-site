@@ -1,0 +1,27 @@
+{% comment %}
+  “pages” template. Named after a content type (events, people…), this
+  renders that type’s pages instead of templates/default.liquid. Context available:
+  page (this object’s fields), content (its rendered body), site, seo, collections.
+{% endcomment %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ seo.title }}</title>
+    <link rel="stylesheet" href="{{ site.basePath }}/assets/theme.css" />
+  </head>
+  <body>
+    <main>
+      <h1>{{ page.title }}</h1>
+      {{ content }}
+      {% if page.showRecentPosts %}
+        <ul>
+          {% for post in collections.posts %}
+            <li><a href="{{ site.basePath }}{{ post.url }}">{{ post.title }}</a></li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </main>
+  </body>
+</html>

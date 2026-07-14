@@ -6,3 +6,6 @@ fields:
     required: true
   description:
     type: text
+  showRecentPosts:
+    type: boolean
+    

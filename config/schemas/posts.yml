@@ -1,0 +1,10 @@
+# “posts” content type — edit the fields below.
+# See the YAML cheat sheet under the editor for the available field types.
+kind: collection
+hasBody: true
+fields:
+  title:
+    type: text
+    required: true
+  tags:
+    type: tags
